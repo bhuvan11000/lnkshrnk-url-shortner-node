@@ -1,0 +1,5 @@
+# Linguist overrides — ensure JS is detected as primary language
+# CSS remains counted after trimming, but we mark it vendored as a safety net
+public/style.css linguist-vendored
+public/script.js linguist-vendored
+# Keep HTML counted (small) — not vendored
