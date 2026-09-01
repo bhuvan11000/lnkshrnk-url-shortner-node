@@ -4,7 +4,7 @@
 
 Live: `https://<your-render-service>.onrender.com` · Local: `http://127.0.0.1:8000`
 
-> Node.js port of [lnkshrnk-url-shortner](../lnkshrnk-url-shortner) (Python/FastAPI). Frontend is kept identical — only the footer branding was updated.
+> Node.js port of [lnkshrnk-url-shortner](https://github.com/bhuvan11000/lnkshrnk-url-shortner) (Python/FastAPI). Frontend is kept identical — only the footer branding was updated.
 
 ---
 
