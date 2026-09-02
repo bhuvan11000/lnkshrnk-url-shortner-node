@@ -2,9 +2,9 @@
 
 > Paste a long link, get a short code. Custom aliases, dedup, click counting. Express + SQLite + nanoid, single-file backend.
 
-Live: `https://<your-render-service>.onrender.com` · Local: `http://127.0.0.1:8000`
+Try it here (completely self-hosted with Serveo reverse proxy): https://lnkshrnk.serveousercontent.com/
 
-> Node.js port of [lnkshrnk-url-shortner](https://github.com/bhuvan11000/lnkshrnk-url-shortner) (Python/FastAPI). Frontend is kept identical — only the footer branding was updated.
+> Node.js port of [lnkshrnk-url-shortner](https://github.com/bhuvan11000/lnkshrnk-url-shortner) (Python/FastAPI).
 
 ---
 
@@ -71,8 +71,6 @@ GET /Ab3x9 → if "." in code: path.join(public, code).isFile() ? sendFile : 404
            → UPDATE urls SET clicks = clicks+1 WHERE code=?  (best-effort, non-fatal)
            → 307 redirect to original
 ```
-
-> Route ordering is intentional: API routes → redirect (`/:code` with dot-fallback) → `app.use(express.static("public"))`. This satisfies the spec (“mount AFTER redirect”) while avoiding shadowing of `/style.css`/`/script.js`.
 
 **3. Stats** `GET /api/stats/{code}` → `SELECT code, original, clicks, created_at` → 404 if missing.
 
